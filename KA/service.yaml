@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: application-service
+spec:
+  ports:
+    - name: write
+      port: 5000
+      targetPort: 5000
+    - name: read
+      port: 5005
+      targetPort: 5005
+  selector:
+    app: applicationdeployment
+  type: LoadBalancer
